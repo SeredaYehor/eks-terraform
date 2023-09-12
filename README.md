@@ -1,4 +1,4 @@
-#Nextcloud eks infrastructure
+# Nextcloud eks infrastructure
 
 This project is designed to learn how to configure self-hosted eks cluster in
 custom vpc with efs and alb-ingress support. This is beta version of tf scripts,
