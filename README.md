@@ -19,10 +19,10 @@ trusted domain.
 In order to deploy vpc for eks with all neccessary iam resources, you should fill 
 variables in **variables.tf** file:
 
-1.key_name = name of ssh key for worker nodes
-2.environment = useless variable, that should describe env of aws resource. Will be replaced with terraform.workspace
-3.region = aws region
-4.database_password = password for nextcloud rds
+1. key_name = name of ssh key for worker nodes
+2. environment = useless variable, that should describe env of aws resource. Will be replaced with terraform.workspace
+3. region = aws region
+4. database_password = password for nextcloud rds
 
 After successful deployment of terraform scripts, it will create custom **.kube-config** file, which will be used
 in **k8s/** directory, that designed to create kubernetes resources using terraform.
@@ -35,17 +35,17 @@ in **k8s/** directory, that designed to create kubernetes resources using terraf
 
 First and foremost, you need to cd to **k8s/** dir and configure variables in **variables.tf** and apply terraform:
 
-1.region
-2.first_subnet = private first subnet from terraform output VPC/EKS section
-3.second_subnet = private second subnet from terraform output VPC/EKS section
-4.database_endpoint = endpoint to rds database from terraform output VPC/EKS section
-5.certificate_arn = arn of aws acm certificate
-6.database_password = password of nextcloud rds database
-7.admin_password = password for nextcloud admin account
-8.trusted_domain = dns name for nextcloud
+1. region
+2. first_subnet = private first subnet from terraform output VPC/EKS section
+3. second_subnet = private second subnet from terraform output VPC/EKS section
+4. database_endpoint = endpoint to rds database from terraform output VPC/EKS section
+5. certificate_arn = arn of aws acm certificate
+6. database_password = password of nextcloud rds database
+7. admin_password = password for nextcloud admin account
+8. trusted_domain = dns name for nextcloud
 
 Then, apply **efs.yaml** and **nextcloud.yaml** files to deploy kubernetes resources
 
 `Example: kubectl apply -f efs.yaml && kubectl apply -f nextcloud.yaml`
 
-##Enjoy this project (^v^)
+## Enjoy this project (^v^)
